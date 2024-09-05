@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package mygrpc;
+
+service UserService {
+  rpc GetUser (UserRequest) returns (UserResponse);
+}
+
+service ProductService {
+  rpc GetProduct (ProductRequest) returns (ProductResponse);
+}
+
+message UserRequest {
+  string userId = 1;
+}
+
+message UserResponse {
+  string userId = 1;
+  string userName = 2;
+}
+
+message ProductRequest {
+  string productId = 1;
+}
+
+message ProductResponse {
+  string productId = 1;
+  string productName = 2;
+}
